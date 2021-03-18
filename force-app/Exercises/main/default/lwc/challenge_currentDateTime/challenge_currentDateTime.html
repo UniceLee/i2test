@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-m-bottom_small">
+       
+        <lightning-card title="Current Date and Time" icon-name="standard:event">
+                <lightning-button-icon icon-name="action:refresh" class="slds" onclick={refresh}></lightning-button-icon> 
+                <div class="slds-p-horizontal_small">
+                    <h1>
+                        <lightning-formatted-date-time value={currentDateTime} year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" second="2-digit" weekday="long" time-zone-name="short">
+                        </lightning-formatted-date-time>
+                    </h1>
+                </div>
+        </lightning-card>
+    </div>
+</template>
