@@ -1,8 +1,9 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 
 export default class Challenge_currentDateTime extends LightningElement {
 
     @api currentDateTime;
+    @track bool=false;
 
     constructor(){
         super();
@@ -12,13 +13,21 @@ export default class Challenge_currentDateTime extends LightningElement {
     }
     
     refresh(){
-       connectedCallback();
+        console.log(this.currentDateTime);
+        return this.bool = true;
     }
 
+    
+    
     connectedCallback(){
-        setInterval(() => {
-             this.currentDateTime = Date.now();
-         }, 1000);
-     };
+        //if(this.bool){
+            console.log("test");
+            setInterval(() => {
+                this.currentDateTime = Date.now();
+            }, 1000);
+        //}
+   }
+    
+    
     
 }
